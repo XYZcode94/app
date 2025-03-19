@@ -1,14 +1,11 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins-Regular', Arial, sans-serif;
+    font-family: "Poppins-Regular", Arial, sans-serif;
 }
 
 /* Global Styles */
@@ -33,11 +30,11 @@ html {
     /* White */
     --background-light: #f8f9fa;
     /* Light Grey */
-    --success-color: #4CAF50;
+    --success-color: #4caf50;
     /* Success Green */
     --error-color: #f44336;
     /* Error Red */
-    --info-color: #2196F3;
+    --info-color: #2196f3;
     /* Info Blue */
 }
 
@@ -105,23 +102,27 @@ header .container {
     height: auto;
 }
 
-nav ul, .links ul {
+nav ul,
+.links ul {
     list-style: none;
     display: flex;
 }
 
-nav ul li, .links li {
+nav ul li,
+.links li {
     margin: 0 15px;
 }
 
-nav ul li a, .links ul li a {
+nav ul li a,
+.links ul li a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
-nav ul li a:hover, .links ul li a:hover {
+nav ul li a:hover,
+.links ul li a:hover {
     color: var(--primary-dark);
 }
 
@@ -240,8 +241,7 @@ nav ul li a:hover, .links ul li a:hover {
     transition: transform 0.3s ease;
     overflow: hidden;
     position: relative;
-    filter: grayscale(1)
-    
+    filter: grayscale(1);
 }
 
 .member:hover {
@@ -249,7 +249,6 @@ nav ul li a:hover, .links ul li a:hover {
     box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.2);
     filter: grayscale(0);
 }
-
 
 .member img {
     width: 200px;
@@ -275,7 +274,7 @@ nav ul li a:hover, .links ul li a:hover {
 #pra {
     position: relative;
     font-size: 1.25rem;
-    font-family: 'ZillaSlab-SemiBoldItalic', serif;
+    font-family: "ZillaSlab-SemiBoldItalic", serif;
     text-align: justify;
     line-height: 1.8;
     color: var(--text-dark);
@@ -298,13 +297,15 @@ nav ul li a:hover, .links ul li a:hover {
 
 #pra a::after,
 #pra .reference::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    background: linear-gradient(to right,
+            var(--secondary-color),
+            var(--accent-color));
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
@@ -392,7 +393,7 @@ nav ul li a:hover, .links ul li a:hover {
 }
 
 .reference-tooltip[data-position="top"]::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -405,7 +406,7 @@ nav ul li a:hover, .links ul li a:hover {
 }
 
 .reference-tooltip[data-position="bottom"]::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -5px;
     left: 50%;
@@ -649,11 +650,11 @@ footer {
 
 /* Alert Types */
 .alert.info {
-    background-color: #2196F3;
+    background-color: #2196f3;
 }
 
 .alert.success {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 .alert.error {
@@ -666,14 +667,46 @@ footer {
         text-align: inherit;
     }
 
-    header .container {
-        flex-direction: column;
+    nav {
+        display: none;
+        background: #72dab7;
+        transform: translateX(350px);
+        height: 100vh;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    nav ul li {
+        height: 70px;
+        width: 100%;
+        align-content: center;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 0 15px;
+        margin: 10px 0;
+        transform: translateY(60px);
+    }
+
+    .hamburger span{
+        background-color: #1c1c1c;
+        width: 25px;
+        height: 3px;
+        margin: 3px;
+        display: block;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        transform: translateY(0);
+    }
+
+    .logo img {
+        width: 100px;
     }
 
     nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
     }
 
     .image-container img {
@@ -714,6 +747,10 @@ footer {
 
     #event-tab {
         flex-direction: column;
+    }
+
+    .hamburger {
+        display: block !important;
     }
 }
 
@@ -815,7 +852,6 @@ form textarea:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
 #contact {
     background-image: url(../image/Contact.png);
     background-size: cover;
@@ -863,7 +899,7 @@ form textarea:focus {
 }
 
 #contact form button {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -876,13 +912,13 @@ form textarea:focus {
 
 #contact form input:focus,
 #contact form textarea:focus {
-    outline: 2px solid #4CAF50;
+    outline: 2px solid #4caf50;
     box-shadow: 0 0 5px rgba(74, 175, 80, 0.5);
 }
 
 #contact form input:focus,
 #contact form textarea:focus {
-    outline: 2px solid #4CAF50;
+    outline: 2px solid #4caf50;
     box-shadow: 0 0 5px rgba(74, 175, 80, 0.5);
 }
 
@@ -890,12 +926,12 @@ form textarea:focus {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
 
-}.social-media {
+.social-media {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-
 }
 
 .social-icons a {
@@ -905,10 +941,11 @@ form textarea:focus {
     transition: all 0.3s ease;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
     color: #ffffff;
     transform: translateY(-3px);
-} 
+}
+
 .social-media a:hover {
     color: #2398ce;
 }
@@ -918,4 +955,13 @@ form textarea:focus {
     font-size: 1.5em;
     margin: 10px;
     transition: all 0.3s ease;
+}
+
+.menu-active{
+    transform: translateX(0px);
+    display: block;
+}
+
+.hamburger{
+    display: none;
 }

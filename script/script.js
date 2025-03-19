@@ -507,3 +507,14 @@ document.querySelectorAll('#pra strong[data-reference]').forEach(reference => {
         reference.style.borderBottom = '1px dotted var(--primary-color)';
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector("nav");
+
+  hamburger.addEventListener("click", () => {
+      menu.classList.toggle("menu-active");
+  });
+});
