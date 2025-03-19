@@ -751,6 +751,8 @@ footer {
 
     .hamburger {
         display: block !important;
+        border: 1px solid #101010;
+        border-radius: 5px;
     }
 }
 
