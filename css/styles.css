@@ -824,7 +824,7 @@ footer {
 }
 
 #joinForm button {
-    background-color: #007bff;
+    background-color: #44ce64;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -834,6 +834,7 @@ footer {
     font-weight: 500;
     width: 100%;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 #joinForm button:hover {
