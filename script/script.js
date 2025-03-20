@@ -513,8 +513,23 @@ document.querySelectorAll('#pra strong[data-reference]').forEach(reference => {
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector("nav");
+  const icon = document.querySelector("#nav-icon");
 
   hamburger.addEventListener("click", () => {
       menu.classList.toggle("menu-active");
+
+      if (icon.classList.contains("fa-bars")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+          icon.style.color = "red";
+      } else if (icon.classList.contains("fa-xmark")) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+          icon.style.color = "#000";
+      } else {
+          // Default to fa-bars if no relevant class is found
+          icon.classList.add("fa-bars");
+          icon.style.color = "#000";
+      }
   });
 });
