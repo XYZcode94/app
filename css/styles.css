@@ -664,11 +664,12 @@ footer {
     }
 
     nav {
+        display: none;
         background: #72dab7;
         transform: translateX(1000px);
         height: 100vh;
         position: absolute;
-        width: 50%;
+        width: 100%;
         top: 0;
         left: 0;
         transition: transform 0.5s ease-in-out; /* Longer duration for smoother effect */
@@ -749,6 +750,9 @@ footer {
         margin-right: 8px; /* Space between icon and text */
         color: #555;       /* Icon color */
         font-size: 16px;   /* Icon size */
+    }
+    .respon-dis{
+        opacity: 1;
     }
     
 }
@@ -958,7 +962,7 @@ form textarea:focus {
 }
 
 .menu-active{
-    transform: translateX(385px);
+    transform: translateX(0px);
     display: block;
 }
 
