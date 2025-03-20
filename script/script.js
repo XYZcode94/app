@@ -533,3 +533,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const listItems = document.querySelectorAll("nav ul li");
+
+  listItems.forEach((li) => {
+      li.addEventListener("click", () => {
+          const link = li.querySelector("a").getAttribute("href");
+          if (link) {
+              window.location.href = link;
+          }
+      });
+  });
+});
