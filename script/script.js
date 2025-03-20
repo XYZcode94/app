@@ -368,10 +368,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Event page specific handlers
 document.addEventListener("DOMContentLoaded", function() {
     const eventHandlers = {
-        'hackthon_div': '/hackthon_event.html',
-        'Ai_Ml_inovaction': '/Ai_Ml_inovaction.html',
-        'Web_Dev': '/Web_Dev.html',
-        'Cybersecurity': '/Cybersecurity.html'
+        'hackthon_div': '../pages/hackthon_event.html',
+        'Ai_Ml_inovaction': '../pages/Ai_Ml_inovaction.html',
+        'Web_Dev': '../pages/Web_Dev.html',
+        'Cybersecurity': '../pages/Cybersecurity.html'
     };
 
     Object.entries(eventHandlers).forEach(([id, url]) => {
