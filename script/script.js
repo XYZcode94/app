@@ -548,3 +548,41 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+
+/*
+
+<---!hackathon--->>*/
+
+// Wait until the document is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    
+  // FAQ Toggle Functionality
+  document.querySelectorAll('.question').forEach(question => {
+      question.addEventListener('click', function () {
+          alert(this.textContent + " clicked!"); // Temporary action (Replace with real FAQ answer toggle)
+      });
+  });
+
+  // Smooth Scrolling for Navigation Links
+  document.querySelectorAll('nav ul li a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetSection = document.querySelector(this.getAttribute('href'));
+          if (targetSection) {
+              targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+      });
+  });
+
+  // Join Discord & Register Buttons
+  document.querySelectorAll('.hero button').forEach(button => {
+      button.addEventListener('click', function () {
+          if (this.textContent.includes("Discord")) {
+              window.location.href = "https://discord.com"; // Replace with actual Discord link
+          } else {
+              window.location.href = "https://register-page.com"; // Replace with actual registration link
+          }
+      });
+  });
+});

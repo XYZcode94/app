@@ -53,3 +53,155 @@ footer {
         margin: 10px;
     }
 }
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #0D0D1A;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #12122B;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6C63FF;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #CCC;
+}
+
+.hero button {
+    background: #6C63FF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #544FC5;
+}
+
+/* FAQ Section */
+.faq, .prizes, .sponsors, .team {
+    padding: 50px 20px;
+    background: #161632;
+    margin-top: 20px;
+}
+
+.faq h2, .prizes h2, .sponsors h2, .team h2 {
+    margin-bottom: 20px;
+}
+
+.faq .question {
+    background: #1A1A3D;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 80%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq .question:hover {
+    background: #22224e;
+}
+
+/* Prize Section */
+.prizes .prize-box {
+    background: #1A1A3D;
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 10px;
+    width: 60%;
+    font-weight: bold;
+}
+
+/* Sponsors */
+.sponsors img {
+    width: 120px;
+    margin: 15px;
+}
+
+/* Team Section */
+.team img {
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+/* Footer */
+footer {
+    background: #12122B;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .faq .question, .prizes .prize-box {
+        width: 100%;
+    }
+}

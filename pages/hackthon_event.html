@@ -3,98 +3,894 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CODEXIS - The Hub for Coders, Innovators, and Problem Solvers">
-    <meta name="keywords" content="coding, programming, innovation, tech club, developers">
-    <meta name="author" content="CODEXIS Club">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <title>Limbo Hacks - 24 hours of creation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <!-- favicon-->
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png" />
-    <title>Hackathon Event</title>
-    <link rel="stylesheet" href="../css/stylehack.css">
-    <script defer src="../script/script.js"></script>
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Header/Nav */
+        header {
+            background-color: #12152E;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #12152E;
+            color: white;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            margin-bottom: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Calendar */
+        .calendar {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            width: 300px;
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .weekday {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .calendar-day {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .highlight {
+            background-color: #FF3C5F;
+            color: white;
+            border-radius: 50%;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #6E5FF4;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #FF3C5F;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .code-icon {
+            width: 200px;
+            height: 200px;
+            background-color: #73DFDF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: #F0F0FF;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+            color: #666;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Prizes Section */
+        .prizes-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .prizes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .prize-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .prize-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .non-coding-prizes {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Sponsors Section */
+        .sponsors-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .sponsors-cta {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .sponsors-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .sponsor-logo {
+            max-width: 130px;
+            height: auto;
+        }
+
+        /* Team Section */
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .team-cta {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .member-social a {
+            color: #12152E;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #12152E;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer .buttons-container {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .footer-info {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                margin-bottom: 2rem;
+                max-width: 100%;
+            }
+            
+            .about {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .prizes-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sponsors-logos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-members {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .calendar {
+                width: 100%;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+            }
+            
+            .team-members {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Loading Bar -->
-    <div id="progress-bar"></div>
-    
-    <!-- Header -->
+    <!-- Header/Navigation -->
     <header>
-        <h1>Hackathon 2024</h1>
-        <p>Innovate. Code. Win.</p>
+        <nav>
+            <div class="logo">
+                <a href="#" style="color: white; text-decoration: none;">Limbo Hacks</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">prizes</a></li>
+                <li><a href="#">sponsors</a></li>
+                <li><a href="#">team</a></li>
+            </ul>
+        </nav>
     </header>
-    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Join Limbo Hacks</h1>
+            <h2>24 hours of creation</h2>
+            <p>Join us on 20-21 November 2023 with 300+ students from across the nation for 24 hours of creation.</p>
+            
+            <div class="buttons-container">
+                <a href="#" class="btn btn-secondary">Apply</a>
+                <a href="#" class="btn btn-outline">Register</a>
+            </div>
+            
+            <p style="margin-top: 2rem;">Interested? Connect with us on socials</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        
+        <div class="calendar">
+            <div class="calendar-header">
+                <h3>Events starts on Nov 2023</h3>
+            </div>
+            <div class="calendar-grid">
+                <div class="weekday">S</div>
+                <div class="weekday">M</div>
+                <div class="weekday">T</div>
+                <div class="weekday">W</div>
+                <div class="weekday">T</div>
+                <div class="weekday">F</div>
+                <div class="weekday">S</div>
+                
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                
+                <div class="calendar-day">5</div>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                
+                <div class="calendar-day">12</div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                
+                <div class="calendar-day">19</div>
+                <div class="calendar-day highlight">20</div>
+                <div class="calendar-day highlight">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about">
-        <h2>About the Hackathon</h2>
-        <p>Hackathon 2024 is a coding marathon where developers, designers, and innovators come together to build groundbreaking projects. Compete for amazing prizes and network with industry leaders.</p>
+    <section class="container about">
+        <div class="about-content">
+            <h2>What is Limbo hacks?</h2>
+            <p>Limbo Hacks is a 24 hour long hackathon scheduled on November 20th. A hackathon is an event where students, developers, designers, and entrepreneurs come together to create a project from scratch. Throughout the weekend participants will develop their ideas and build new technologies that will address our real-world problems. Along the way, they will connect with other tech enthusiasts, receive guidance from industry mentors, and much more!</p>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is a hackathon? <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            A hackathon is a coding marathon where participants work to create innovative software or hardware projects from scratch within a limited timeframe, usually 24-48 hours.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Who can attend? <span class="toggle">-</span>
+                        </div>
+                        <div class="faq-answer" style="display: block;">
+                            Students from any educational background can participate. Whether you're a coding expert or just getting started, everyone is welcome to join and learn.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            I have more questions! <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Reach out to our team through our contact page or social media, and we'll be happy to answer any other questions you might have!
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How to register myself in the hackathon? <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Simply click on the "Register" button on our homepage and follow the instructions to complete your registration for the hackathon.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Am I to bring my own laptop? <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, participants are required to bring their own laptops for the hackathon. Make sure it's charged and ready to go!
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I volunteer? <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We welcome volunteers to help make the event run smoothly. Please contact us through our website for more information.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <div class="code-icon">
+                {/*}
+            </div>
+        </div>
     </section>
-    
-    <!-- Prize Pool Section -->
-    <section id="prize-pool">
-        <h2>Prize Pool</h2>
-        <p>Total Prize Pool: <strong>$50,000</strong></p>
-        <ul>
-            <li>🏆 1st Place - $25,000</li>
-            <li>🥈 2nd Place - $15,000</li>
-            <li>🥉 3rd Place - $10,000</li>
-        </ul>
+
+    <!-- Prizes Section -->
+    <section class="container prizes-section">
+        <h2>Prize section</h2>
+        <div class="prizes-container">
+            <div class="prize-card">
+                <div class="prize-icon">🏆</div>
+                <h3>Overall First</h3>
+                <p>$1000 Amazon gift card + special prize from our sponsors</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🏅</div>
+                <h3>Overall Second</h3>
+                <p>$750 Amazon gift card + exclusive sponsor goodie bag</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🥉</div>
+                <h3>Third Second</h3>
+                <p>$500 Amazon gift card + mentorship from our foundation</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🔥</div>
+                <h3>Best Solo</h3>
+                <p>$300 Amazon gift card for the most impressive solo project</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🚀</div>
+                <h3>Best Beginner</h3>
+                <p>$250 Amazon gift card for the most promising beginner team</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🎨</div>
+                <h3>Best UI/UX</h3>
+                <p>$250 Amazon gift card for the best designed user interface</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">💻</div>
+                <h3>Best Web App with Qoom</h3>
+                <p>$200 Amazon gift card for the best web application built using Qoom</p>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">🎁</div>
+                <h3>More prizes</h3>
+                <p>Additional prizes will be announced soon!</p>
+            </div>
+        </div>
+        
+        <div class="non-coding-prizes">
+            <h3>Non-coding prizes</h3>
+            <p>coming soon</p>
+        </div>
     </section>
-    
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <h2>Schedule</h2>
-        <ul>
-            <li><strong>Day 1:</strong> Keynote & Team Formation</li>
-            <li><strong>Day 2:</strong> Hacking Begins</li>
-            <li><strong>Day 3:</strong> Final Pitches & Judging</li>
-        </ul>
+
+    <!-- Sponsors Section -->
+    <section class="container sponsors-section">
+        <h2>Sponsors & Partners</h2>
+        <div class="sponsors-cta">
+            <p>Interested in Sponsoring?</p>
+            <a href="#" class="btn btn-primary">Contact Us</a>
+        </div>
+        <div class="sponsors-logos">
+            <img src="/api/placeholder/120/60" alt="Code For Cause" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="Sublime" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="echoAR" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="taskade" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="replit" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="Qoom" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="Interview Cake" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="1Password" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="glimpse" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="egghead.io" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="MLH" class="sponsor-logo">
+            <img src="/api/placeholder/120/60" alt="DevBrain" class="sponsor-logo">
+        </div>
     </section>
-    
-    <!-- Speakers Section -->
-    <section id="speakers">
-        <h2>Keynote Speakers</h2>
-        <ul>
-            <li>🎤 John Doe - CEO, TechCorp</li>
-            <li>🎤 Jane Smith - AI Researcher</li>
-        </ul>
+
+    <!-- Team Section -->
+    <section class="container team-section">
+        <h2>Our Team</h2>
+        <div class="team-cta">
+            <p>Interested in joining our team?</p>
+            <a href="#" class="btn btn-primary">Contact us</a>
+        </div>
+        <div class="team-members">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Team Member">
+                </div>
+                <h3>Organizer</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Team Member">
+                </div>
+                <h3>Organizer</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Team Member">
+                </div>
+                <h3>Organizer</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Team Member">
+                </div>
+                <h3>Organizer</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Team Member">
+                </div>
+                <h3>Organizer</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Judges</h2>
+        <div class="team-cta">
+            <p>Interested in being judge?</p>
+            <a href="#" class="btn btn-primary">Contact team</a>
+        </div>
+        <div class="team-members">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Judge">
+                </div>
+                <h3>Judge</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Judge">
+                </div>
+                <h3>Judge</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Judge">
+                </div>
+                <h3>Judge</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Judge">
+                </div>
+                <h3>Judge</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="/api/placeholder/150/150" alt="Judge">
+                </div>
+                <h3>Judge</h3>
+                <div class="member-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <!-- Why It's Happening -->
-    <section id="why">
-        <h2>Why This Hackathon?</h2>
-        <p>We aim to bring together the brightest minds to create innovative solutions, build strong communities, and promote collaboration.</p>
-    </section>
-    
-    <!-- Goals -->
-    <section id="goals">
-        <h2>Goals</h2>
-        <ul>
-            <li>💡 Foster innovation and creativity</li>
-            <li>🤝 Encourage networking and collaboration</li>
-            <li>🚀 Provide a platform for groundbreaking ideas</li>
-        </ul>
-    </section>
-    
+
     <!-- Footer -->
     <footer>
-        <p>© 2024 Hackathon Event. All rights reserved.</p>
+        <div class="buttons-container">
+            <a href="#" class="btn btn-primary">Register</a>
+            <a href="#" class="btn btn-outline">Contact</a>
+        </div>
+        
+        <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
+        <div class="footer-info">
+            <p>Contact us: hello@limbohacks.tech</p>
+            <p>© 2023 Limbo Hacks. All Rights Reserved. Terms and Conditions apply.</p>
+        </div>
     </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const toggle = question.querySelector('.toggle');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.querySelector('.toggle').textContent = '+';
+                        item.querySelector('.faq-answer').style.display = 'none';
+                    }
+                });
+                
+                // Toggle current item
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    toggle.textContent = '+';
+                    faqItem.querySelector('.faq-answer').style.display = 'none';
+                } else {
+                    faqItem.classList.add('active');
+                    toggle.textContent = '-';
+                    faqItem.querySelector('.faq-answer').style.display = 'block';
+                }
+            });
+        });
+
+        // Mobile Menu Toggle (for smaller screens)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
